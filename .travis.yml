@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+install: "pip install -r requirements.txt"
+script:
+   - make html
+   - ghp-import output
+   - git config --global user.email "ror6ax@gmail.com"
+   - git config --global user.name "Travis CI"
+after_success:
+  - git push --force -q "https://${GH_TOKEN}@github.com/${GITHUB_REPO}.git" gh-pages > /dev/null 2>&1
+
+env:
+  global:
+    - GITHUB_REPO: "ntuukpi/asu"
+    - secure: "h4lLl+D7+GkP+ej92yx6MCUe4t+tUf2LpECBQe9EMP56xzIQfwpGDie7PKv3AIIAd1ieQLC5D1sjAxpM+jnzwSxAwmWU8enmsX8epuay5jMxsUTEC+pHaq4xsi+O7PRyVMVAUw/4kJwhear+wMXPjQcJk55V8/AQuBbYYyv2lWTVGp0lFSBmmceR1fULLbTR5TyILC9h/dv3A+2pA/M++4Cc7/zWXM0PLLq3cWCT/jvmh3DoepnbzsZiERWjsQcsHT+blSw6jxKSkmqrKQwz2d7zi/kpt10s+wi7lllUj3z9gJvbMJwYtSqwowFyzlHqgJiIbwn+kPV2ZlJ41vsSJ06fgGC/98zRmhDuKdtM5B6LcL1IQD6zTkVDs9YwMN5eybWSL9GqF9BjbjBygqbvou4ubgAu0MJQzbK6Cm2BsY7MUSp2Mx9S1GQEHVWBjMN+o2yca8kLI9PfoNYnW3jkB/vCdaveLTeSg5SClBJ/d7Dq4TX8CAO0QG1ciAm/OMkEEf6NWcvU4XdwOkcCzyXImE2ECu8vnBeDSu1jiS2yn9+AUVyV6tEIgak0Oa5fPzU+xspV5V3BJZ2pTlZX9rFXGUhIUriEwPmmVG9IDpWBK9axsXK7wntcKM541xpYpHWgOvm4eEhUgszPHEMIuO+JlJPn1SOdNb3YI3E++ryKkao="
