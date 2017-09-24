@@ -1,16 +1,16 @@
 language: python
 python:
-  - "2.7"
-install: "pip install -r requirements.txt"
+- '2.7'
+install: pip install -r requirements.txt
 script:
-   - make html
-   - ghp-import output
-   - git config --global user.email "ror6ax@gmail.com"
-   - git config --global user.name "Travis CI"
+- make html
+- ghp-import output
+- git config --global user.email "ror6ax@gmail.com"
+- git config --global user.name "Travis CI"
 after_success:
-  - git push --force -q "https://${GH_TOKEN}@github.com/${GITHUB_REPO}.git" gh-pages > /dev/null 2>&1
-
+- git push --force -q "https://${GH_TOKEN}@github.com/${GITHUB_REPO}.git" gh-pages
+  > /dev/null 2>&1
 env:
   global:
-    - GITHUB_REPO: "ntuukpi/asu"
-    - secure: "h4lLl+D7+GkP+ej92yx6MCUe4t+tUf2LpECBQe9EMP56xzIQfwpGDie7PKv3AIIAd1ieQLC5D1sjAxpM+jnzwSxAwmWU8enmsX8epuay5jMxsUTEC+pHaq4xsi+O7PRyVMVAUw/4kJwhear+wMXPjQcJk55V8/AQuBbYYyv2lWTVGp0lFSBmmceR1fULLbTR5TyILC9h/dv3A+2pA/M++4Cc7/zWXM0PLLq3cWCT/jvmh3DoepnbzsZiERWjsQcsHT+blSw6jxKSkmqrKQwz2d7zi/kpt10s+wi7lllUj3z9gJvbMJwYtSqwowFyzlHqgJiIbwn+kPV2ZlJ41vsSJ06fgGC/98zRmhDuKdtM5B6LcL1IQD6zTkVDs9YwMN5eybWSL9GqF9BjbjBygqbvou4ubgAu0MJQzbK6Cm2BsY7MUSp2Mx9S1GQEHVWBjMN+o2yca8kLI9PfoNYnW3jkB/vCdaveLTeSg5SClBJ/d7Dq4TX8CAO0QG1ciAm/OMkEEf6NWcvU4XdwOkcCzyXImE2ECu8vnBeDSu1jiS2yn9+AUVyV6tEIgak0Oa5fPzU+xspV5V3BJZ2pTlZX9rFXGUhIUriEwPmmVG9IDpWBK9axsXK7wntcKM541xpYpHWgOvm4eEhUgszPHEMIuO+JlJPn1SOdNb3YI3E++ryKkao="
+  - GITHUB_REPO: ntuukpi/asu
+  - secure: ZyM7ZkqltMRZqq+lNpXYcUpXNDXpEFFt29h0m6uszYuaLpeSsJfOrS8LJdfFZ8Ad2k/kaLWSfNZ+MAD/p0h/sX0ciWbxqJtoufrYl5Ent21+dNJEcEg0c7BSYBXX9MbBCmIrVnJg+/kaepAX/X65npFeF4KR4Nw1u+GmLq6CCdnUVbyB4vjr65LXD2io3bcJK01ieeidFWmAbVPKU9z0X6M/Ufiv7WYVzjP0PMZeTLYkcXe9UGPxj3vz8MEZVL5nK5sqTBLa1CSgC1v67ODwJQPKhPSwdk78P2boOLNZiWJv0wuArdiLGhElAatavtwkOnCULJ5BFc95NebUvP8Ez3VJ1QD9LyrFJG56bGDgwrxxSG18pwLwnIWZGjiIwhsITo2rImOe8XjsyP8RRU6i6GXsx2nQhmjS0djqwA66ojmeSNVfDi4Zs2qa62JzyQWiGNmCxThyKqZSRorIFtQQ//+Lcd9X8/97qJ8GTAc7sNv5/Ga6aX8/IVReGZoHdSpiyD/kpWAqQxBDPotkQn3uO093rjuhaKbmvXeifVi7V/MA6nIKHi7x180lGXD+3M36vNr+6qFrRvv/wLHfWRGFJyBGzP7cv32k+1brtmT/3sIfAJKjmMDeZflcpL28++M1ppYVvND96pcerWr7vKM189aXg8in1wn1ARPGdj9po50=
