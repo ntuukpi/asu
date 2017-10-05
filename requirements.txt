@@ -1,3 +1,4 @@
 ghp-import
 Markdown
 pelican
+Babel

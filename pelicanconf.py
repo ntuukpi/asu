@@ -7,6 +7,10 @@ SITENAME = u'https://ntuukpi.github.io/asu/'
 SITEURL = 'https://ntuukpi.github.io/asu/'
 
 PATH = 'content'
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['i18n_subsites']
+
+JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
 TIMEZONE = 'Europe/Paris'
 THEME = 'Flex'
@@ -27,3 +31,10 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+# mapping: language_code -> settings_overrides_dict
+I18N_SUBSITES = {
+    'en': {
+        'SITENAME': 'National Technical University of Ukraine',
+    },
+}
